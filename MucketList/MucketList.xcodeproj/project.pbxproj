@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		6F95B7A11EBB2E0E0038E11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7A01EBB2E0E0038E11A /* AppDelegate.swift */; };
-		6F95B7A31EBB2E0E0038E11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7A21EBB2E0E0038E11A /* ViewController.swift */; };
+		6F95B7A31EBB2E0E0038E11A /* CameraAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7A21EBB2E0E0038E11A /* CameraAlbumView.swift */; };
 		6F95B7A61EBB2E0E0038E11A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F95B7A41EBB2E0E0038E11A /* Main.storyboard */; };
 		6F95B7A81EBB2E0E0038E11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F95B7A71EBB2E0E0038E11A /* Assets.xcassets */; };
 		6F95B7AB1EBB2E0E0038E11A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F95B7A91EBB2E0E0038E11A /* LaunchScreen.storyboard */; };
+		6F95B7B61EBB31B90038E11A /* CameraAlbumSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7B51EBB31B90038E11A /* CameraAlbumSelectPresenter.swift */; };
+		6F95B7B81EBB37CC0038E11A /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F95B79D1EBB2E0E0038E11A /* MucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F95B7A01EBB2E0E0038E11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F95B7A21EBB2E0E0038E11A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6F95B7A21EBB2E0E0038E11A /* CameraAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlbumView.swift; sourceTree = "<group>"; };
 		6F95B7A51EBB2E0E0038E11A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F95B7A71EBB2E0E0038E11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F95B7AA1EBB2E0E0038E11A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F95B7AC1EBB2E0E0038E11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F95B7B51EBB31B90038E11A /* CameraAlbumSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlbumSelectPresenter.swift; sourceTree = "<group>"; };
+		6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		6F95B7B21EBB2E130038E11A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -75,7 +80,7 @@
 		6F95B7B31EBB2E180038E11A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6F95B7A21EBB2E0E0038E11A /* ViewController.swift */,
+				6F95B7A21EBB2E0E0038E11A /* CameraAlbumView.swift */,
 				6F95B7A41EBB2E0E0038E11A /* Main.storyboard */,
 			);
 			name = View;
@@ -84,6 +89,7 @@
 		6F95B7B41EBB2E1E0038E11A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6F95B7B51EBB31B90038E11A /* CameraAlbumSelectPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -161,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F95B7A31EBB2E0E0038E11A /* ViewController.swift in Sources */,
+				6F95B7B81EBB37CC0038E11A /* PhotoInfo.swift in Sources */,
+				6F95B7B61EBB31B90038E11A /* CameraAlbumSelectPresenter.swift in Sources */,
+				6F95B7A31EBB2E0E0038E11A /* CameraAlbumView.swift in Sources */,
 				6F95B7A11EBB2E0E0038E11A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
