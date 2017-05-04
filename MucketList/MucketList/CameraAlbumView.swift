@@ -32,6 +32,16 @@ class CameraAlbumView: UIViewController {
     @IBAction func albumBtnClicked(_ sender: UIButton) {
         self.presenter?.albumFunction()
     }
+    
+    func showContentsView(with model: PhotoInfo) {
+        print("perform")
+        self.performSegue(withIdentifier: "showContentsSegue", sender: model)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let contentsView = segue.destination as! ContentsViewController
+        contentsView.photoInfo = sender as? PhotoInfo
+    }
 
     
 }

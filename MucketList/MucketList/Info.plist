@@ -24,6 +24,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BucketList가 사용자 카메라의 접근 합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>사용자가 어디서 사진을 촬영했는지 알기 위해서 위치정보를 얻어옵니다</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 
 struct PhotoInfo {
-    
-    let name: String
+    let image: UIImage
     let date: Date
-    let location: String
-    
+    let location: CLLocation?
 }
