@@ -10,9 +10,23 @@ import Foundation
 import UIKit
 import CoreLocation
 
-struct PhotoInfo {
-    let image: UIImage
-    let date: Date
-    let location: CLLocation?
+class PhotoInfo {
+   dynamic let image: Data?
+   dynamic let date: Date?
+   dynamic let location: CLLocation?
+    
+    init() {
+        image = nil
+        date = nil
+        location = nil
+    }
+    
+    init(image: Data?, date: Date?, location: CLLocation?) {
+        self.image = image
+        self.date = date
+        self.location = location
+    }
+
+
 }
 

@@ -19,8 +19,8 @@ class ContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let photoInfo = photoInfo{
-            takenImg.image = photoInfo.image
-            creationDateLB.text = photoInfo.date.description(with: Locale.current)
+            takenImg.image = UIImage(data: photoInfo.image!)
+            creationDateLB.text = photoInfo.date?.description(with: Locale.current)
             
             if let locationInfo = photoInfo.location {
                 latitudeLB.text = String(locationInfo.coordinate.latitude)

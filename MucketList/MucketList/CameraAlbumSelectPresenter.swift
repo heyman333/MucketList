@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Photos
 import AssetsLibrary
+import RealmSwift
 
 class CameraAlbumSelectPresenter: NSObject, CameraAlbumSelectDelegate  {
     
@@ -89,7 +90,12 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                 
                 if let asset = asset{
                     
-                    let photoInfo = PhotoInfo(image: info["UIImagePickerControllerEditedImage"] as! UIImage, date: asset.creationDate!, location: asset.location)
+                    let photoInfo = PhotoInfo(image: UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage)!, date: asset.creationDate!, location: asset.location)
+                    
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(PhotoInfo())
+                    }
                     
                     view.dismiss(animated: true, completion:{ [unowned self] () -> Void in
                         self.view.showContentsView(with: photoInfo)
@@ -117,7 +123,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                     self.view.dismiss(animated: true, completion: {
                         self.fetchLastImage(completion: { [unowned self] (asset) in
                             if let asset = asset{
-                                let photoInfo = PhotoInfo(image: image, date: asset.creationDate!, location: asset.location)
+                                let photoInfo = PhotoInfo(image: UIImagePNGRepresentation(image)!, date: asset.creationDate!, location: asset.location)
                                     self.view.showContentsView(with: photoInfo)
                                 }
                         })
