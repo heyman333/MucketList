@@ -75,14 +75,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21m-uw-n5a">
-                                <rect key="frame" x="136" y="381" width="16" height="21"/>
+                                <rect key="frame" x="136" y="381" width="223" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqz-KG-GAw">
-                                <rect key="frame" x="136" y="443" width="20" height="21"/>
+                                <rect key="frame" x="136" y="443" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-kt-zzl">
-                                <rect key="frame" x="136" y="511" width="35" height="21"/>
+                                <rect key="frame" x="136" y="511" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -124,12 +124,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creationDateLB" destination="2o5-kt-zzl" id="My3-wj-qpd"/>
+                        <outlet property="latitudeLB" destination="21m-uw-n5a" id="h4v-kf-4J8"/>
+                        <outlet property="longitudeLB" destination="lqz-KG-GAw" id="X89-6K-4AA"/>
                         <outlet property="takenImg" destination="G8L-bQ-WbK" id="b2A-kM-kwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfX-4M-euK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="-423"/>
+            <point key="canvasLocation" x="-324" y="-423.23838080959524"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hsD-nc-uqa">

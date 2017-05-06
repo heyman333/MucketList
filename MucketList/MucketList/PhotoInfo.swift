@@ -15,3 +15,4 @@ struct PhotoInfo {
     let date: Date
     let location: CLLocation?
 }
+

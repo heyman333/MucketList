@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Photos
-
+import AssetsLibrary
 
 class CameraAlbumSelectPresenter: NSObject, CameraAlbumSelectDelegate  {
     
@@ -38,6 +38,10 @@ extension CameraAlbumSelectPresenter: CLLocationManagerDelegate {
 }
 
 extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        view.dismiss(animated: true, completion: nil)
+    }
     
     func cameraFunction(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
@@ -123,8 +127,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
         })
     }
     
-    func fetchLastImage(completion: (_ lastImageAsset: PHAsset?) -> Void)
-    {
+    func fetchLastImage(completion: (_ lastImageAsset: PHAsset?) -> Void) {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchOptions.fetchLimit = 1
@@ -134,16 +137,9 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
         {
             let lastImageAsset: PHAsset = fetchResult.firstObject!
             completion(lastImageAsset)
-        }
-        else
-        {
+        } else {
             completion(nil)
         }
     }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        view.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
