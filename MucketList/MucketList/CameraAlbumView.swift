@@ -8,11 +8,11 @@
 
 import UIKit
 
-
-protocol CameraAlbumSelectDelegate {
+protocol PresenterProtocol {
     init(view:CameraAlbumView)
     func cameraFunction()
     func albumFunction()
+    func loadAllData()
 }
 
 
@@ -33,6 +33,14 @@ class CameraAlbumView: UIViewController {
         self.presenter?.albumFunction()
     }
     
+    @IBAction func showSavedData(_ sender: UIButton) {
+        self.presenter?.loadAllData()
+    }
+   
+}
+
+extension CameraAlbumView: ViewProtocol {
+    
     func showContentsView(with model: PhotoInfo) {
         print("perform")
         self.performSegue(withIdentifier: "showContentsSegue", sender: model)
@@ -42,7 +50,4 @@ class CameraAlbumView: UIViewController {
         let contentsView = segue.destination as! ContentsViewController
         contentsView.photoInfo = sender as? PhotoInfo
     }
-
-    
 }
-

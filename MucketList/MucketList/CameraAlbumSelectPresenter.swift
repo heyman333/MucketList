@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 import Photos
 import AssetsLibrary
-import RealmSwift
 
-class CameraAlbumSelectPresenter: NSObject, CameraAlbumSelectDelegate  {
+protocol ViewProtocol {
+    func showContentsView(with model: PhotoInfo)
+}
+
+
+class CameraAlbumSelectPresenter: NSObject, PresenterProtocol  {
     
     unowned let view: CameraAlbumView
     let locationManager = CLLocationManager()
@@ -24,6 +28,8 @@ class CameraAlbumSelectPresenter: NSObject, CameraAlbumSelectDelegate  {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
     }
+    
+    
 }
 
 extension CameraAlbumSelectPresenter: CLLocationManagerDelegate {
@@ -90,13 +96,10 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                 
                 if let asset = asset{
                     
-                    let photoInfo = PhotoInfo(image: UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage)!, date: asset.creationDate!, location: asset.location)
+                    let photoInfo = PhotoInfo((UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage), asset.creationDate, asset.location))
                     
-                    let realm = try! Realm()
-                    try! realm.write {
-                        realm.add(PhotoInfo())
-                    }
-                    
+                    DataCenter.shared.savePhotoInfo(with: photoInfo)
+                
                     view.dismiss(animated: true, completion:{ [unowned self] () -> Void in
                         self.view.showContentsView(with: photoInfo)
                         
@@ -123,7 +126,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                     self.view.dismiss(animated: true, completion: {
                         self.fetchLastImage(completion: { [unowned self] (asset) in
                             if let asset = asset{
-                                let photoInfo = PhotoInfo(image: UIImagePNGRepresentation(image)!, date: asset.creationDate!, location: asset.location)
+                                let photoInfo = PhotoInfo((UIImagePNGRepresentation(image), asset.creationDate, asset.location))
                                     self.view.showContentsView(with: photoInfo)
                                 }
                         })
@@ -146,6 +149,15 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
         } else {
             completion(nil)
         }
+    }
+
+    func loadAllData() {
+        let allDatasArray = DataCenter.shared.getAllDatas()
+        
+        for data in allDatasArray! {
+            print(data.date!)
+        }
+        
     }
 }
 

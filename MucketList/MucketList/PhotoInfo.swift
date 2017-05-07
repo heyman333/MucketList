@@ -9,24 +9,36 @@
 import Foundation
 import UIKit
 import CoreLocation
+import RealmSwift
+import Realm
 
-class PhotoInfo {
-   dynamic let image: Data?
-   dynamic let date: Date?
-   dynamic let location: CLLocation?
+class PhotoInfo: Object {
+    dynamic var image: Data?
+    dynamic var date: Date?
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
     
-    init() {
-        image = nil
-        date = nil
-        location = nil
+    required init() {
+        super.init()
     }
     
-    init(image: Data?, date: Date?, location: CLLocation?) {
-        self.image = image
-        self.date = date
-        self.location = location
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
     }
+    
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+        
+    }
+    
+    convenience public init(_ data:(Data?, Date?, CLLocation?)) {
+        self.init()
+        self.image = data.0
+        self.date = data.1
+        self.latitude = (data.2?.coordinate.latitude) != nil ? (data.2?.coordinate.latitude)! : 0.0
+        self.longitude = (data.2?.coordinate.longitude) != nil ? (data.2?.coordinate.longitude)! : 0.0
 
-
+    }
+    
 }
 

@@ -16,6 +16,7 @@
 		6F95B7AB1EBB2E0E0038E11A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F95B7A91EBB2E0E0038E11A /* LaunchScreen.storyboard */; };
 		6F95B7B61EBB31B90038E11A /* CameraAlbumSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7B51EBB31B90038E11A /* CameraAlbumSelectPresenter.swift */; };
 		6F95B7B81EBB37CC0038E11A /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */; };
+		6FE841F61EBF11E700A5004B /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE841F51EBF11E700A5004B /* DataCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6F95B7AC1EBB2E0E0038E11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F95B7B51EBB31B90038E11A /* CameraAlbumSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlbumSelectPresenter.swift; sourceTree = "<group>"; };
 		6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
+		6FE841F51EBF11E700A5004B /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		A7012CEAF44E99160D9BE678 /* Pods-MucketList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MucketList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MucketList/Pods-MucketList.debug.xcconfig"; sourceTree = "<group>"; };
 		D0450ADFB470761EDEFFB792 /* Pods-MucketList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MucketList.release.xcconfig"; path = "Pods/Target Support Files/Pods-MucketList/Pods-MucketList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				6F95B7B71EBB37CC0038E11A /* PhotoInfo.swift */,
+				6FE841F51EBF11E700A5004B /* DataCenter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FE841F61EBF11E700A5004B /* DataCenter.swift in Sources */,
 				6F95B7B81EBB37CC0038E11A /* PhotoInfo.swift in Sources */,
 				6F95B7B61EBB31B90038E11A /* CameraAlbumSelectPresenter.swift in Sources */,
 				6F95B7A31EBB2E0E0038E11A /* CameraAlbumView.swift in Sources */,

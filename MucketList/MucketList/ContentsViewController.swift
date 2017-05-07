@@ -22,9 +22,9 @@ class ContentsViewController: UIViewController {
             takenImg.image = UIImage(data: photoInfo.image!)
             creationDateLB.text = photoInfo.date?.description(with: Locale.current)
             
-            if let locationInfo = photoInfo.location {
-                latitudeLB.text = String(locationInfo.coordinate.latitude)
-                longitudeLB.text = String(locationInfo.coordinate.longitude)
+            if photoInfo.latitude != 0.0, photoInfo.longitude != 0.0 {
+                latitudeLB.text = String(photoInfo.latitude)
+                longitudeLB.text = String(photoInfo.longitude)
             } else {
                 latitudeLB.text = "위도없음"
                 longitudeLB.text = "경도없음"
