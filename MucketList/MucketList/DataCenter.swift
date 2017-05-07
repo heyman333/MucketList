@@ -25,6 +25,8 @@ final class DataCenter {
             try! realm.write {
                 realm.add(photoInfo)
             }
+        } else {
+            print("realm객체가 생성되지 않았습니다.")
         }
     }
     
