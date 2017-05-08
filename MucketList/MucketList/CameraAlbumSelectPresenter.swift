@@ -11,12 +11,13 @@ import UIKit
 import Photos
 import AssetsLibrary
 
-protocol ViewProtocol {
+protocol MainViewProtocol {
     func showContentsView(with model: PhotoInfo)
+    func showCollectionView(with model: Array<PhotoInfo>)
 }
 
 
-class CameraAlbumSelectPresenter: NSObject, PresenterProtocol  {
+class CameraAlbumSelectPresenter: NSObject, MainPresenterProtocol  {
     
     unowned let view: CameraAlbumView
     let locationManager = CLLocationManager()
@@ -28,7 +29,6 @@ class CameraAlbumSelectPresenter: NSObject, PresenterProtocol  {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
     }
-    
     
 }
 
@@ -96,7 +96,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                 
                 if let asset = asset{
                     
-                    let photoInfo = PhotoInfo((UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage), asset.creationDate, asset.location))
+                    let photoInfo = PhotoInfo((UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage)!, asset.creationDate!, asset.location))
                     
                     DataCenter.shared.savePhotoInfo(with: photoInfo)
                 
@@ -126,7 +126,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                     self.view.dismiss(animated: true, completion: {
                         self.fetchLastImage(completion: { [unowned self] (asset) in
                             if let asset = asset{
-                                let photoInfo = PhotoInfo((UIImagePNGRepresentation(image), asset.creationDate, asset.location))
+                                let photoInfo = PhotoInfo((UIImagePNGRepresentation(image)!, asset.creationDate!, asset.location))
                                     self.view.showContentsView(with: photoInfo)
                                 }
                         })
@@ -153,11 +153,10 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
 
     func loadAllData() {
         let allDatasArray = DataCenter.shared.getAllDatas()
-        
-        for data in allDatasArray! {
-            print(data.date!)
+
+        if let allDataArr = allDatasArray {
+            self.view.showCollectionView(with: allDataArr)
         }
-        
     }
 }
 

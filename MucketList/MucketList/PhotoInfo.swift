@@ -18,8 +18,13 @@ class PhotoInfo: Object {
     dynamic var latitude: Double = 0.0
     dynamic var longitude: Double = 0.0
     
-    required init() {
-        super.init()
+    convenience init(_ data:(Data, Date, CLLocation?)) {
+        self.init()
+        self.image = data.0
+        self.date = data.1
+        self.latitude = (data.2?.coordinate.latitude) != nil ? (data.2?.coordinate.latitude)! : 0.0
+        self.longitude = (data.2?.coordinate.longitude) != nil ? (data.2?.coordinate.longitude)! : 0.0
+
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
@@ -28,16 +33,10 @@ class PhotoInfo: Object {
     
     required init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
-        
     }
     
-    convenience public init(_ data:(Data?, Date?, CLLocation?)) {
-        self.init()
-        self.image = data.0
-        self.date = data.1
-        self.latitude = (data.2?.coordinate.latitude) != nil ? (data.2?.coordinate.latitude)! : 0.0
-        self.longitude = (data.2?.coordinate.longitude) != nil ? (data.2?.coordinate.longitude)! : 0.0
-
+    required init() {
+        super.init()
     }
     
 }

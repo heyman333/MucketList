@@ -8,13 +8,12 @@
 
 import UIKit
 
-protocol PresenterProtocol {
+protocol MainPresenterProtocol {
     init(view:CameraAlbumView)
     func cameraFunction()
     func albumFunction()
     func loadAllData()
 }
-
 
 class CameraAlbumView: UIViewController {
     
@@ -39,15 +38,25 @@ class CameraAlbumView: UIViewController {
    
 }
 
-extension CameraAlbumView: ViewProtocol {
+extension CameraAlbumView: MainViewProtocol {
     
     func showContentsView(with model: PhotoInfo) {
         print("perform")
-        self.performSegue(withIdentifier: "showContentsSegue", sender: model)
+        self.performSegue(withIdentifier: "ShowContentsSegue", sender: model)
+    }
+    
+    func showCollectionView(with model: Array<PhotoInfo>){
+        self.performSegue(withIdentifier: "ShowAlbumSegue", sender: model)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let contentsView = segue.destination as! ContentsViewController
-        contentsView.photoInfo = sender as? PhotoInfo
+        
+        if segue.identifier == "ShowContentsSegue" {
+            let contentsView = segue.destination as! ContentsViewController
+            contentsView.photoInfo = sender as? PhotoInfo
+        } else {
+            let collectionView = segue.destination as! AlbumCollectionViewController
+            collectionView.photoInfoArr = sender as! Array<PhotoInfo>
+        }
     }
 }
