@@ -13,18 +13,26 @@ import RealmSwift
 import Realm
 
 class PhotoInfo: Object {
+    dynamic var id: String = "default"
     dynamic var image: Data?
     dynamic var date: Date?
     dynamic var latitude: Double = 0.0
     dynamic var longitude: Double = 0.0
     
-    convenience init(_ data:(Data, Date, CLLocation?)) {
+    convenience init(_ data:(String, Data, Date, CLLocation?)) {
+        
         self.init()
-        self.image = data.0
-        self.date = data.1
-        self.latitude = (data.2?.coordinate.latitude) != nil ? (data.2?.coordinate.latitude)! : 0.0
-        self.longitude = (data.2?.coordinate.longitude) != nil ? (data.2?.coordinate.longitude)! : 0.0
+        print(data.0)
+        self.id = data.0
+        self.image = data.1
+        self.date = data.2
+        self.latitude = (data.3?.coordinate.latitude) != nil ? (data.3?.coordinate.latitude)! : 0.0
+        self.longitude = (data.3?.coordinate.longitude) != nil ? (data.3?.coordinate.longitude)! : 0.0
 
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {

@@ -11,6 +11,7 @@ import UIKit
 class AlbumCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var takenImgView: UIImageView!
+    @IBOutlet weak var takenDate: UILabel!
     
     
 }

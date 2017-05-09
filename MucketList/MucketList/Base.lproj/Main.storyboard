@@ -160,31 +160,39 @@
                                 <rect key="frame" x="10" y="84" width="355" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rpt-aM-M4Q">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="172.5" height="172.5"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCollectionCell" id="M5z-Id-dcf" customClass="AlbumCollectionViewCell" customModule="MucketList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jla-jN-VEw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-06-hAg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-d6-ngl">
+                                                            <rect key="frame" x="68" y="76" width="36" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="iKM-d6-ngl" firstAttribute="centerY" secondItem="1Fq-06-hAg" secondAttribute="centerY" id="Inh-vR-UQr"/>
                                                         <constraint firstAttribute="trailing" secondItem="1Fq-06-hAg" secondAttribute="trailing" id="L15-2T-RO4"/>
                                                         <constraint firstAttribute="bottom" secondItem="1Fq-06-hAg" secondAttribute="bottom" id="RHA-wc-L6Y"/>
                                                         <constraint firstItem="1Fq-06-hAg" firstAttribute="top" secondItem="jla-jN-VEw" secondAttribute="top" id="jFq-d2-xvL"/>
+                                                        <constraint firstItem="iKM-d6-ngl" firstAttribute="centerX" secondItem="1Fq-06-hAg" secondAttribute="centerX" id="m0h-0w-vk4"/>
                                                         <constraint firstItem="1Fq-06-hAg" firstAttribute="leading" secondItem="jla-jN-VEw" secondAttribute="leading" id="pJA-KJ-OL2"/>
                                                     </constraints>
                                                 </view>
@@ -197,6 +205,7 @@
                                             <constraint firstAttribute="bottom" secondItem="jla-jN-VEw" secondAttribute="bottom" id="biX-YE-Nkf"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="takenDate" destination="iKM-d6-ngl" id="AlP-hE-g1O"/>
                                             <outlet property="takenImgView" destination="1Fq-06-hAg" id="K72-qr-0ff"/>
                                         </connections>
                                     </collectionViewCell>
@@ -222,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZq-b3-sca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="310"/>
+            <point key="canvasLocation" x="-1108" y="274.81259370314842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hsD-nc-uqa">

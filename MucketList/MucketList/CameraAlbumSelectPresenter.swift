@@ -96,7 +96,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                 
                 if let asset = asset{
                     
-                    let photoInfo = PhotoInfo((UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage)!, asset.creationDate!, asset.location))
+                    let photoInfo = PhotoInfo(asset.localIdentifier, UIImagePNGRepresentation(info["UIImagePickerControllerEditedImage"] as! UIImage)!, asset.creationDate!, asset.location)
                     
                     DataCenter.shared.savePhotoInfo(with: photoInfo)
                 
@@ -126,7 +126,7 @@ extension CameraAlbumSelectPresenter: UIImagePickerControllerDelegate, UINavigat
                     self.view.dismiss(animated: true, completion: {
                         self.fetchLastImage(completion: { [unowned self] (asset) in
                             if let asset = asset{
-                                let photoInfo = PhotoInfo((UIImagePNGRepresentation(image)!, asset.creationDate!, asset.location))
+                                let photoInfo = PhotoInfo(asset.localIdentifier,UIImagePNGRepresentation(image)!, asset.creationDate!, asset.location)
                                     self.view.showContentsView(with: photoInfo)
                                 }
                         })

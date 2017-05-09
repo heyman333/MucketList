@@ -19,7 +19,7 @@ class AlbumCollectionViewController: UIViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         print(photoAlbumCollectionView.frame.size.width)
-        let itemSize = (photoAlbumCollectionView.frame.size.width - 25) / 3.0
+        let itemSize = (photoAlbumCollectionView.frame.size.width - 10) / 2.0
         photoAlbumCollectionViewLayout.itemSize = CGSize(width: itemSize, height: itemSize)
     }
 }
@@ -34,13 +34,16 @@ extension AlbumCollectionViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCollectionCell", for: indexPath) as! AlbumCollectionViewCell
         
-        if let cellImg = photoInfoArr[indexPath.row].image {
+        if let cellImg = photoInfoArr[indexPath.row].image, let date = photoInfoArr[indexPath.row].date {
             
             cell.takenImgView.image = UIImage(data: cellImg)
+            cell.takenDate.text = date.description(with: Locale.current)
+            print(date.description(with: Locale.current))
             
         } else {
             
             cell.takenImgView.image = UIImage(named:"Steve")
+            cell.takenDate.text = "로딩실패"
             
         }
     

@@ -23,7 +23,7 @@ final class DataCenter {
     func savePhotoInfo(with photoInfo: PhotoInfo) {
         if let realm = realm {
             try! realm.write {
-                realm.add(photoInfo)
+                realm.add(photoInfo, update: true)
             }
         } else {
             print("realm객체가 생성되지 않았습니다.")
