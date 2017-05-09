@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1HP-hT-nZS">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,25 +20,25 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9A-uB-b3X">
-                                <rect key="frame" x="168" y="214" width="39" height="30"/>
+                                <rect key="frame" x="140.5" y="214" width="39" height="30"/>
                                 <state key="normal" title="카메라"/>
                                 <connections>
                                     <action selector="cameraBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIh-2A-ZfR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dY-ao-nvP">
-                                <rect key="frame" x="148.5" y="421" width="78" height="30"/>
+                                <rect key="frame" x="121" y="421" width="78" height="30"/>
                                 <state key="normal" title="앨범가져오기"/>
                                 <connections>
                                     <action selector="albumBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jD5-mf-gaG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-Hs-Ap6">
-                                <rect key="frame" x="146" y="583" width="82" height="30"/>
+                                <rect key="frame" x="119" y="484" width="82" height="30"/>
                                 <state key="normal" title="저장 정보보기"/>
                                 <connections>
                                     <action selector="showSavedData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Td5-Bx-DQR"/>
@@ -74,7 +74,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cEf-Xp-5f4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PSN-HK-Kj7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-ZU-aDR">
@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-bQ-WbK">
-                                <rect key="frame" x="26" y="94" width="323" height="225"/>
+                                <rect key="frame" x="26" y="94" width="268" height="186.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G8L-bQ-WbK" secondAttribute="height" multiplier="291:203" id="cdf-vd-cjy"/>
                                 </constraints>
@@ -144,20 +144,20 @@
             </objects>
             <point key="canvasLocation" x="-324" y="-423.23838080959524"/>
         </scene>
-        <!--AlbumCollectionViewController-->
+        <!--저장목록-->
         <scene sceneID="4qx-jS-Vby">
             <objects>
-                <viewController storyboardIdentifier="AlbumCollectionViewController" title="AlbumCollectionViewController" automaticallyAdjustsScrollViewInsets="NO" id="YP1-FE-f3V" customClass="AlbumCollectionViewController" customModule="MucketList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlbumCollectionViewController" title="저장목록" automaticallyAdjustsScrollViewInsets="NO" id="YP1-FE-f3V" customClass="AlbumCollectionViewController" customModule="MucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="veC-Ww-NZC"/>
                         <viewControllerLayoutGuide type="bottom" id="lLz-Bs-wWb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GHC-Cu-b2e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-lF-30x">
-                                <rect key="frame" x="10" y="84" width="355" height="583"/>
+                                <rect key="frame" x="10" y="114" width="300" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rpt-aM-M4Q">
                                     <size key="itemSize" width="172.5" height="172.5"/>
@@ -167,7 +167,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCollectionCell" id="M5z-Id-dcf" customClass="AlbumCollectionViewCell" customModule="MucketList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
+                                        <rect key="frame" x="64" y="0.0" width="172.5" height="172.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
@@ -215,23 +215,49 @@
                                     <outlet property="delegate" destination="YP1-FE-f3V" id="ERG-8C-bbP"/>
                                 </connections>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOy-to-LyG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kdu-7F-Tzj"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TJc-Wr-Upn"/>
+                                    <barButtonItem style="plain" id="TTf-rJ-k9J">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" segmentControlStyle="bar" selectedSegmentIndex="0" id="8TG-pF-4KQ">
+                                            <rect key="frame" x="43" y="5.5" width="234" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="First"/>
+                                                <segment title="Second"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JdK-d9-y8c"/>
+                                </items>
+                                <color key="tintColor" red="0.32156862749999998" green="0.50196078430000002" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lLz-Bs-wWb" firstAttribute="top" secondItem="fWX-lF-30x" secondAttribute="bottom" id="6iF-ox-YDs"/>
-                            <constraint firstItem="fWX-lF-30x" firstAttribute="top" secondItem="veC-Ww-NZC" secondAttribute="bottom" constant="20" id="aCG-U9-FLj"/>
+                            <constraint firstItem="xOy-to-LyG" firstAttribute="top" secondItem="veC-Ww-NZC" secondAttribute="bottom" id="9Hp-m2-qb7"/>
+                            <constraint firstAttribute="trailing" secondItem="xOy-to-LyG" secondAttribute="trailing" id="OIG-rH-Iur"/>
+                            <constraint firstItem="fWX-lF-30x" firstAttribute="top" secondItem="veC-Ww-NZC" secondAttribute="bottom" constant="50" id="aCG-U9-FLj"/>
                             <constraint firstAttribute="trailing" secondItem="fWX-lF-30x" secondAttribute="trailing" constant="10" id="oDD-pr-fDw"/>
                             <constraint firstItem="fWX-lF-30x" firstAttribute="leading" secondItem="GHC-Cu-b2e" secondAttribute="leading" constant="10" id="sQA-lr-hq5"/>
+                            <constraint firstItem="xOy-to-LyG" firstAttribute="leading" secondItem="GHC-Cu-b2e" secondAttribute="leading" id="vuD-h7-33z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="photoAlbumCollectionView" destination="fWX-lF-30x" id="M6r-ag-ZDP"/>
                         <outlet property="photoAlbumCollectionViewLayout" destination="Rpt-aM-M4Q" id="ue6-Mu-6b2"/>
+                        <outlet property="toolBar" destination="xOy-to-LyG" id="pRR-0h-pfg"/>
+                        <segue destination="K5q-5G-m0x" kind="show" identifier="AlbumCollectionToContentsSegue" id="FIh-TU-Wfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZq-b3-sca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="274.81259370314842"/>
+            <point key="canvasLocation" x="-1108.125" y="389.78873239436621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hsD-nc-uqa">
@@ -252,4 +278,7 @@
             <point key="canvasLocation" x="-1860" y="-424.13793103448279"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FIh-TU-Wfv"/>
+    </inferredMetricsTieBreakers>
 </document>

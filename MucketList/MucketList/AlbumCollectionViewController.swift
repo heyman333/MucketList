@@ -14,14 +14,24 @@ class AlbumCollectionViewController: UIViewController {
     
     @IBOutlet weak var photoAlbumCollectionView: UICollectionView!
     @IBOutlet weak var photoAlbumCollectionViewLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var toolBar: UIToolbar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
+    
         print(photoAlbumCollectionView.frame.size.width)
         let itemSize = (photoAlbumCollectionView.frame.size.width - 10) / 2.0
         photoAlbumCollectionViewLayout.itemSize = CGSize(width: itemSize, height: itemSize)
+
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0.0, y: toolBar.frame.height-0.5, width: toolBar.frame.width, height: 0.5)
+        bottomBorder.backgroundColor = UIColor.gray.cgColor
+        toolBar.layer.addSublayer(bottomBorder)
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
+    
+
 }
 
 extension AlbumCollectionViewController: UICollectionViewDataSource {
@@ -46,7 +56,21 @@ extension AlbumCollectionViewController: UICollectionViewDataSource {
             cell.takenDate.text = "로딩실패"
             
         }
-    
+        
         return cell
     }
 }
+
+extension AlbumCollectionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "AlbumCollectionToContentsSegue", sender: photoInfoArr[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let contentsView = segue.destination as! ContentsViewController
+        contentsView.photoInfo = sender as? PhotoInfo
+    }
+
+}
+
